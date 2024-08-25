@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,32 +12,41 @@
       margin: 0;
       padding: 0;
     }
+
     .container {
       max-width: 800px;
       margin: 0 auto;
       padding: 20px;
       display: flex;
-      padding-top:50px;
+      padding-top: 50px;
     }
+
     .item-image {
       padding-top: 80px;
       flex: 1;
     }
+
     .order-form {
       flex: 1;
-      margin-left: 20px; /* Add some space between image and form */
+      margin-left: 20px;
+      /* Add some space between image and form */
     }
+
     h1 {
       text-align: center;
     }
+
     form {
       margin-top: 20px;
     }
+
     label {
       display: block;
       margin-bottom: 10px;
     }
-    input[type="text"], select {
+
+    input[type="text"],
+    select {
       width: 100%;
       padding: 8px;
       margin-bottom: 20px;
@@ -44,6 +54,7 @@
       border-radius: 4px;
       box-sizing: border-box;
     }
+
     input[type="submit"] {
       background-color: #4CAF50;
       color: white;
@@ -53,11 +64,13 @@
       cursor: pointer;
       font-size: 16px;
     }
+
     input[type="submit"]:hover {
       background-color: #45a049;
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <div class="item-image">
@@ -86,11 +99,14 @@
   </div>
 
   <script>
-    document.getElementById("size").addEventListener("change", function() {
+    document.getElementById("size").addEventListener("change", function () {
       var selectedSize = this.value;
-      var imageSrc = "portrait" + selectedSize + ".jpg";
-      document.getElementById("portraitImage").src = imageSrc;
+      var imageSrc = "portrait" + selectedSize + ".jpg"; // Construct the image source based on the selected size
+      console.log("Selected Size: " + selectedSize);
+      console.log("Image Source: " + imageSrc);
+      document.getElementById("portraitImage").src = imageSrc; // Update the image source
     });
   </script>
 </body>
+
 </html>
