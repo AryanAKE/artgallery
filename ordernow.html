@@ -16,8 +16,10 @@
       margin: 0 auto;
       padding: 20px;
       display: flex;
+      padding-top:50px;
     }
     .item-image {
+      padding-top: 80px;
       flex: 1;
     }
     .order-form {
@@ -59,11 +61,11 @@
 <body>
   <div class="container">
     <div class="item-image">
-      <img id="portraitImage" src="portrait_4X4.jpg" alt="Portrait Image" style="max-width: 100%;">
+      <img id="portraitImage" src="portrait_4X4.jpg.jpg" alt="Portrait Image" style="max-width: 100%;">
     </div>
     <div class="order-form">
       <h1>Order Portrait</h1>
-      <form action="checkout.php" method="post" id="orderForm">
+      <form action="#" method="post" id="orderForm">
         <label for="size">Select Size:</label>
         <select id="size" name="size">
           <option value="4X4">4X4 ($250)</option>
@@ -74,6 +76,8 @@
         <input type="text" id="quantity" name="quantity" placeholder="Enter quantity" required>
         <label for="name">Your Name:</label>
         <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        <label for="name">Your Phone Number:</label>
+        <input type="text" id="phone" name="phone" placeholder="Enter your phone" required>
         <label for="email">Your Email:</label>
         <input type="text" id="email" name="email" placeholder="Enter your email" required>
         <input type="submit" value="Place Order">
@@ -84,7 +88,7 @@
   <script>
     document.getElementById("size").addEventListener("change", function() {
       var selectedSize = this.value;
-      var imageSrc = "portrait_" + selectedSize + ".jpg";
+      var imageSrc = "portrait" + selectedSize + ".jpg";
       document.getElementById("portraitImage").src = imageSrc;
     });
   </script>
