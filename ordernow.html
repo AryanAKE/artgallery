@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Portrait</title>
+  <style>
+    /* Add your CSS styles here for page styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+    }
+    .item-image {
+      flex: 1;
+    }
+    .order-form {
+      flex: 1;
+      margin-left: 20px; /* Add some space between image and form */
+    }
+    h1 {
+      text-align: center;
+    }
+    form {
+      margin-top: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input[type="text"], select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item-image">
+      <img id="portraitImage" src="portrait_4X4.jpg" alt="Portrait Image" style="max-width: 100%;">
+    </div>
+    <div class="order-form">
+      <h1>Order Portrait</h1>
+      <form action="checkout.php" method="post" id="orderForm">
+        <label for="size">Select Size:</label>
+        <select id="size" name="size">
+          <option value="4X4">4X4 ($250)</option>
+          <option value="4X6">4X6 ($300)</option>
+          <option value="6X6">6X6 ($400)</option>
+        </select>
+        <label for="quantity">Quantity:</label>
+        <input type="text" id="quantity" name="quantity" placeholder="Enter quantity" required>
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        <label for="email">Your Email:</label>
+        <input type="text" id="email" name="email" placeholder="Enter your email" required>
+        <input type="submit" value="Place Order">
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("size").addEventListener("change", function() {
+      var selectedSize = this.value;
+      var imageSrc = "portrait_" + selectedSize + ".jpg";
+      document.getElementById("portraitImage").src = imageSrc;
+    });
+  </script>
+</body>
+</html>
