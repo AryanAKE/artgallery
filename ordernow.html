@@ -93,10 +93,29 @@
         <input type="text" id="phone" name="phone" placeholder="Enter your phone" required>
         <label for="email">Your Email:</label>
         <input type="text" id="email" name="email" placeholder="Enter your email" required>
-        <input type="submit" value="Place Order">
+        <input type="button" value="Place Order" onclick="Send()">
       </form>
     </div>
   </div>
+
+
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    function Send() {
+      console.log("function call");
+      Email.send({
+        Host: "smtp.elasticemail.com",
+        Username: "aryankumarekka@gmail.com",
+        Password: "7888A5F78DAD71433698B1177049D49D1658",
+        To: '#',
+        From: "aryankumarekka@gmail.com",
+        Subject: "This is the subject",
+        Body: "And this is the body"
+      }).then(
+        message => alert(message)
+      );
+    }
+  </script>
 </body>
 
 </html>
